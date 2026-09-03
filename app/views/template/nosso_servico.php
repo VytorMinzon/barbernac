@@ -22,12 +22,12 @@
                 // imagem padrão
                 $img = BASE_URL . "uploads/servico/sem-foto-servico.png";
 
-                // Ajuste aqui: foto_servico já contém 'servico/nome_do_arquivo.ext'
                 if (!empty($servico['foto_servico'])) {
-                    $caminhoArquivo = BASE_URL . "uploads/" . $servico['foto_servico']; // corrigido aqui
-                    $headers = @get_headers($caminhoArquivo);
-                    if ($headers && strpos($headers[0], '200') !== false) {
-                        $img = $caminhoArquivo;
+                    $caminhoRelativo = ltrim($servico['foto_servico'], '/\\');
+                    $caminhoFisico = __DIR__ . '/../../../public/uploads/' . $caminhoRelativo;
+
+                    if (file_exists($caminhoFisico)) {
+                        $img = BASE_URL . 'uploads/' . $caminhoRelativo;
                     }
                 }
                 ?>
@@ -38,7 +38,7 @@
                          style="background: #111; border-radius: 12px; padding: 1rem; 
                                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease;">
                         <figure style="margin-bottom: 1rem; overflow: hidden; border-radius: 12px;">
-                            <img src="<?= htmlspecialchars($img) ?>" alt="Foto Serviço"
+                            <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="Foto Serviço"
                                  style="width: 100%; height: 200px; object-fit: cover; display: block;">
                         </figure>
                         <h3 style="color: #f0c674; font-weight: 700; margin-bottom: 0.5rem;">

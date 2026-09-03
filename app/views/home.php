@@ -54,13 +54,11 @@
         <!-- Javascript files-->
         <script src="<?= BASE_URL ?>assets/js/jquery.min.js"></script>
         <script src="<?= BASE_URL ?>assets/js/popper.min.js"></script>
-        <script src="<?= BASE_URL ?>assets/js/bootstrap.bundle.min.js"></script>
+        <script src="<?= BASE_URL ?>assets/js/bootstrap.js"></script>
         <script src="<?= BASE_URL ?>assets/js/owl.carousel.min.js"></script>
 
 
         <script src="<?= BASE_URL ?>assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-
-        <script src="<?= BASE_URL ?>assets/js/jquery-3.0.0.min.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -116,30 +114,6 @@
                 height: auto;
             }
         </style>
-
-        <script>
-            $(document).ready(function() {
-                var owl = $('.owl-carousel');
-                owl.owlCarousel({
-                    margin: 10,
-                    nav: true,
-                    loop: true,
-                    autoplay: true,
-                    autoplayTimeout: 4000,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        600: {
-                            items: 2
-                        },
-                        1000: {
-                            items: 3
-                        }
-                    }
-                })
-            })
-        </script>
 
 </body>
 

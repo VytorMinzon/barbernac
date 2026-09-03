@@ -58,7 +58,7 @@
       <div class="col-md-4">
         <?php
         $caminhoArquivo = BASE_URL . "uploads/" . $cliente['foto_cliente'];
-        $img = BASE_URL . "uploads/sem-foto.png";
+        $img = BASE_URL . "uploads/sem-foto.jpg";
 
         if (!empty($cliente['foto_cliente'])) {
           $headers = @get_headers($caminhoArquivo);

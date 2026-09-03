@@ -511,6 +511,16 @@
 <script src="<?= BASE_URL ?>vendors/assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?= BASE_URL ?>vendors/assets/js/demo.js"></script>
+<script>
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.style.display = 'none';
+            }
+        }, 1000);
+    });
+</script>
 <script type="text/javascript">
     $(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js

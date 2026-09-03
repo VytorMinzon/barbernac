@@ -25,7 +25,7 @@
         <div class="p-4 rounded" style="background-color: #2a2a2a;">
           <h4 class="fw-bold" style="color: #ffffff;">Agende seu horário com rapidez</h4>
           <p style="color: #dddddd;">Com o nosso aplicativo, você pode escolher o serviço, o profissional e o horário de forma simples e prática. Basta escanear o código ao lado para começar!</p>
-          <a href="https://agenciatipi02.smpsistema.com.br/visiontech/appbarber/public/" target="_blank" class="btn mt-3" style="background-color: #f0c674; color: #000; font-weight: bold; border-radius: 0.5rem;">
+          <a href="<?= BASE_URL ?>auth/login" class="btn mt-3" style="background-color: #f0c674; color: #000; font-weight: bold; border-radius: 0.5rem;">
             Baixar Aplicativo
           </a>
         </div>

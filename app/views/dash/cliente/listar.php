@@ -156,7 +156,7 @@ if (isset($_SESSION['mensagem']) && isset($_SESSION['tipo-msg'])) {
                     <td>
                         <?php
                         $caminhoArquivo = BASE_URL . "uploads/" . $linha['foto_cliente'];
-                        $img = BASE_URL . "uploads/sem-foto.png"; // Caminho padrão corrigido
+                        $img = BASE_URL . "uploads/sem-foto.jpg"; // Caminho padrão corrigido
                         // $alt_foto = "imagem sem foto $index";
 
                         if (!empty($linha['foto_cliente'])) {

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- style css -->
-    <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css?v=navbar-footer-2">
     <!-- responsive-->
     <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/responsive.css">
     <!-- awesome fontfamily -->

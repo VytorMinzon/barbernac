@@ -229,7 +229,7 @@ class FuncionarioController extends Controller
     // 5- Método para upload de fotos
     private function uploadFoto($file)
     {
-        $dir = '../public/uploads/funcionario/';
+        $dir = __DIR__ . '/../../public/uploads/funcionario/';
 
         if (!file_exists($dir)) {
             mkdir($dir, 0755, true);

@@ -1,63 +1,54 @@
-<!-- Sidebar -->
-<div class="sidebar">
-    <nav id="sidebar">
-        <div id="dismiss">
-            <i class="fa fa-arrow-left"></i>
-        </div>
-        <ul class="list-unstyled components">
-            <li class="active"><a href="<?= BASE_URL ?>home">Início</a></li>
-            <li><a href="<?= BASE_URL ?>sobre">Sobre Nós</a></li>
-            <li><a href="<?= BASE_URL ?>servico">Serviços</a></li>
-            <li><a href="<?= BASE_URL ?>precos">Preços</a></li>
-            <li><a href="<?= BASE_URL ?>barbeiros">Nossos Barbeiros</a></li>
-            <li><a href="<?= BASE_URL ?>contato">Contato</a></li>
-        </ul>
-    </nav>
-</div>
+<div class="site-shell">
+    <header class="site-header">
+        <nav class="site-navbar" aria-label="Navegação principal">
+            <a class="site-brand" href="<?= BASE_URL ?>home" aria-label="BarberNac, início">
+                <img src="<?= BASE_URL ?>assets/img/logo1.png" alt="BarberNac">
+            </a>
 
-<!-- Overlay -->
-<div class="overlay"></div>
-
-<!-- Conteúdo Principal -->
-<div id="content">
-    <header>
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-md-3">
-                    <div class="full">
-                        <a class="logo" href="<?= BASE_URL ?>home">
-                            <img src="<?= BASE_URL ?>assets/img/logo1.png" alt="Barbearia Corte & Estilo" />
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="right_header_info">
-                        <ul class="d-flex align-items-center justify-content-end">
-                            <li class="button_user">
-                                <a class="button" href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</a>
-                            </li>
-                            <li>
-                                <button type="button" id="sidebarCollapse" class="btn btn-dark ms-3">
-                                    MENU
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="site-nav-links" id="site-navigation">
+                <a href="<?= BASE_URL ?>home">Início</a>
+                <a href="<?= BASE_URL ?>servico">Serviços</a>
+                <a href="<?= BASE_URL ?>barbeiros">Barbeiros</a>
+                <a href="<?= BASE_URL ?>contato">Contato</a>
             </div>
-        </div>
-        <div class="toggle_btn">
-        <i class="fa-solid fa-bars"></i>
-        </div>
+
+            <div class="site-nav-actions">
+                <a class="site-login" href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">Entrar</a>
+                <button class="site-menu-toggle" id="site-menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="Abrir menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
     </header>
 </div>
 
+<div class="site-nav-overlay" id="site-nav-overlay"></div>
 
+<script>
+    (function() {
+        const toggle = document.getElementById('site-menu-toggle');
+        const navigation = document.getElementById('site-navigation');
+        const overlay = document.getElementById('site-nav-overlay');
 
+        if (!toggle || !navigation || !overlay) return;
 
-<script src="<?php echo BASE_URL . 'assets/js/jquery.min.js'; ?>"></script>
-<script src="<?php echo BASE_URL . 'assets/js/popper.min.js'; ?>"></script>
-<script src="<?php echo BASE_URL . 'assets/js/bootstrap.bundle.min.js'; ?>"></script>
-<script src="<?php echo BASE_URL . 'assets/js/owl.carousel.min.js'; ?>"></script>
-<script src="<?php echo BASE_URL . 'assets/js/custom.js'; ?>"></script>
-<script src="<?php echo BASE_URL . 'assets/js/jquery.mCustomScrollbar.concat.min.js'; ?>"></script>
+        const closeMenu = function() {
+            navigation.classList.remove('is-open');
+            overlay.classList.remove('is-visible');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Abrir menu');
+        };
+
+        toggle.addEventListener('click', function() {
+            const isOpen = navigation.classList.toggle('is-open');
+            overlay.classList.toggle('is-visible', isOpen);
+            toggle.setAttribute('aria-expanded', String(isOpen));
+            toggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+        });
+
+        overlay.addEventListener('click', closeMenu);
+        navigation.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', closeMenu);
+        });
+    }());
+</script>

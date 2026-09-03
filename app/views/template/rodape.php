@@ -1,47 +1,45 @@
-<!-- Rodapé -->
-<footer class="footer">
-  <div class="container">
-    <div class="row gy-5">
-      <!-- Coluna 1: Logo -->
-      <div class="col-md-4">
-        <div class="footer_logo mb-4">
-          <a href="index.html">
-            <img src="<?= BASE_URL ?>assets/img/logo1.png" alt="Barbearia Corte & Estilo" class="img-fluid" />
-          </a>
-        </div>
-        <p class="text-light">Tradição, estilo e cuidado para valorizar sua identidade. Agende seu horário e viva a experiência Corte & Estilo.</p>
-      </div>
+<footer class="modern-footer">
+  <div class="modern-footer-inner">
+    <div class="modern-footer-main">
+      <section class="modern-footer-brand">
+        <a href="<?= BASE_URL ?>home" aria-label="BarberNac, início">
+          <img src="<?= BASE_URL ?>assets/img/logo1.png" alt="BarberNac">
+        </a>
+        <p>Tradição, estilo e cuidado para valorizar sua identidade. Uma experiência de barbearia feita para você.</p>
+        <a class="modern-footer-cta" href="<?= BASE_URL ?>contato">Agendar horário <span aria-hidden="true">&rarr;</span></a>
+      </section>
 
-      <!-- Coluna 2: Endereço -->
-      <div class="col-md-4">
-        <div class="address">
-          <h3 class="mb-3">Endereço</h3>
-          <p>
-            Rua dos Barbeiros, 123 - Centro<br>
-            São Paulo - SP<br>
-            Tel: (11) 98765-4321<br>
-            Email: contato@corteestilo.com
-          </p>
-        </div>
-      </div>
+      <section class="modern-footer-column">
+        <h2>Explorar</h2>
+        <a href="<?= BASE_URL ?>home">Início</a>
+        <a href="<?= BASE_URL ?>servico">Serviços</a>
+        <a href="<?= BASE_URL ?>barbeiros">Barbeiros</a>
+        <a href="<?= BASE_URL ?>contato">Contato</a>
+      </section>
 
-      <!-- Coluna 3: Redes Sociais -->
-      <div class="col-md-4">
-        <h3 class="mb-3">Siga-nos</h3>
-        <ul class="social-icons list-unstyled d-flex gap-3">
-          <li><a href="#"><img src="<?= BASE_URL ?>assets/img/fb.png" alt="Facebook" class="social-icon" /></a></li>
-          <li><a href="#"><img src="<?= BASE_URL ?>assets/img/tw.png" alt="Twitter" class="social-icon" /></a></li>
-          <li><a href="#"><img src="<?= BASE_URL ?>assets/img/you.png" alt="YouTube" class="social-icon" /></a></li>
-          <li><a href="#"><img src="<?= BASE_URL ?>assets/img/ig.png" alt="Instagram" class="social-icon" /></a></li>
-        </ul>
-      </div>
+      <section class="modern-footer-column">
+        <h2>Funcionamento</h2>
+        <p><strong>Terça a sexta</strong><br>09:00 às 20:00</p>
+        <p><strong>Sábado</strong><br>09:00 às 18:00</p>
+        <p class="modern-footer-muted">Domingo e segunda: fechado</p>
+      </section>
+
+      <section class="modern-footer-column">
+        <h2>Fale conosco</h2>
+        <p>Rua dos Barbeiros, 123<br>Centro, São Paulo - SP</p>
+        <a href="tel:+5511987654321">(11) 98765-4321</a>
+        <a href="mailto:contato@corteestilo.com">contato@corteestilo.com</a>
+        <div class="modern-footer-socials" aria-label="Redes sociais">
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="Facebook">fb</a>
+          <a href="#" aria-label="YouTube">yt</a>
+        </div>
+      </section>
     </div>
 
-    <!-- Copyright -->
-    <div class="copyright mt-5">
-      <div class="text-center">
-        <p> © 2025 Barbernac. Todos os direitos reservados.</p>
-      </div>
+    <div class="modern-footer-bottom">
+      <span>&copy; <?= date('Y') ?> BarberNac</span>
+      <span>Feito com cuidado para quem valoriza estilo.</span>
     </div>
   </div>
 </footer>

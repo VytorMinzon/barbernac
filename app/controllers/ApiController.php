@@ -227,7 +227,7 @@ class ApiController extends Controller
             if (!empty($dados['foto_cliente'])) {
                 $dados['foto_cliente'] = BASE_URL . 'uploads/' . $dados['foto_cliente'];
             } else {
-                $dados['foto_cliente'] = BASE_URL . 'uploads/sem-foto.png';
+                $dados['foto_cliente'] = BASE_URL . 'uploads/sem-foto.jpg';
             }
 
             echo json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);

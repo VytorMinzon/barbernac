@@ -356,8 +356,6 @@
     <script src="<?= BASE_URL ?>vendors/assets/js/core/bootstrap.min.js" type="text/javascript"></script>
     <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
     <script src="<?= BASE_URL ?>vendors/assets/js/plugins/bootstrap-switch.js"></script>
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
     <!--  Chartist Plugin  -->
     <script src="<?= BASE_URL ?>vendors/assets/js/plugins/chartist.min.js"></script>
     <!--  Notifications Plugin    -->
@@ -367,17 +365,21 @@
     <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
     <script src="<?= BASE_URL ?>vendors/assets/js/demo.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            // Javascript method's body can be found in assets/js/demos.js
-            demo.initDashboardPageCharts();
-
-            demo.showNotification();
-
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const preloader = document.getElementById('preloader');
+                if (preloader) {
+                    preloader.style.display = 'none';
+                }
+            }, 1000);
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function() {
+        });
+    </script>
     <script>
         function abrirModalDesativar(idServico) {
 
@@ -390,14 +392,16 @@
             $('#modalDesativar').modal('show');
         }
 
-        document.getElementById('btnConfirmar').addEventListener('click', function() {
-            const idServico = document.getElementById('idServicoDesativar').value;
-            // console.log(idServico);
+        const btnConfirmar = document.getElementById('btnConfirmar');
+        if (btnConfirmar) {
+            btnConfirmar.addEventListener('click', function() {
+                const idServico = document.getElementById('idServicoDesativar').value;
 
-            if (idServico) {
-                desativarServico(idServico);
-            }
-        });
+                if (idServico) {
+                    desativarServico(idServico);
+                }
+            });
+        }
 
         function desativarServico(idServico) {
 
@@ -434,8 +438,6 @@
 
         }
     </script>
-
-    <script src="<?= BASE_URL ?>assets/js/custom.js"></script>
 
 </body>
 

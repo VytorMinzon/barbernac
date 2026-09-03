@@ -11,6 +11,8 @@ class BarbeirosController extends Controller
 
         $dados['mensagem'] = 'Bem-vindo a BarberNac';
 
+        $funcionarioModel = new Funcionario();
+        $dados['funcionarios'] = $funcionarioModel->getListarFuncionarios();
 
         $this->carregarViews('barbeiros', $dados);
     }

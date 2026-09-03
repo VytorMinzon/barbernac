@@ -67,7 +67,7 @@ if (!$funcionario) {
             <div class="col-md-4">
                 <?php
                 $caminhoFoto = BASE_URL . "uploads/" . $funcionario['foto_funcionario'];
-                $img = BASE_URL . "uploads/sem-foto.png";
+                $img = BASE_URL . "uploads/sem-foto.jpg";
 
                 if (!empty($funcionario['foto_funcionario'])) {
                     $headers = @get_headers($caminhoFoto);

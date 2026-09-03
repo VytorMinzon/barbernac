@@ -5,14 +5,14 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 
-define("BASE_URL", "https://agenciatipi02.smpsistema.com.br/visiontech/barbernac/public/");
+define('BASE_URL', 'http://localhost/barbernac/public/');
 
 
-// Configuração do Data Base
-define("DB_HOST", "smpsistema.com.br");
-define("DB_NAME", "u283879542_barbernac");
-define("DB_USER", "u283879542_barbernac");
-define("DB_PASS", "Senac@barbernac01");
+// Configuração do Data Base (XAMPP LOCAL)
+define("DB_HOST", "localhost");
+define("DB_NAME", "barbernac");
+define("DB_USER", "root");
+define("DB_PASS", "");
 
 // Configuração do Email
 define('HOTS_EMAIL', 'smtp.gmail.com');

@@ -293,15 +293,14 @@
                                 <div class="product_blog_img">
                                     <?php
                                     $img = BASE_URL . "uploads/sem-foto.jpg";
-                                    if (!empty($funcionario['foto_funcionario'])) {
-                                        $caminhoArquivo = BASE_URL . "uploads/" . $funcionario['foto_funcionario'];
-                                        $headers = @get_headers($caminhoArquivo);
-                                        if ($headers && strpos($headers[0], '200') !== false) {
-                                            $img = $caminhoArquivo;
-                                        }
+                                    $fotoFuncionario = trim((string) ($funcionario['foto_funcionario'] ?? ''));
+                                    $caminhoFisico = __DIR__ . '/../../public/uploads/' . ltrim($fotoFuncionario, '/\\');
+
+                                    if ($fotoFuncionario !== '' && file_exists($caminhoFisico)) {
+                                        $img = BASE_URL . 'uploads/' . ltrim($fotoFuncionario, '/\\');
                                     }
                                     ?>
-                                    <img src="<?= $img ?>" alt="Foto de <?= htmlspecialchars($funcionario['nome_funcionario']) ?>" loading="lazy" />
+                                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="Foto de <?= htmlspecialchars($funcionario['nome_funcionario'], ENT_QUOTES, 'UTF-8') ?>" loading="lazy" />
                                 </div>
                                 <div class="product_blog_cont">
                                     <h3><?= htmlspecialchars($funcionario['nome_funcionario'], ENT_QUOTES, 'UTF-8') ?></h3>

@@ -232,7 +232,7 @@ class ServicoController extends Controller
     // Upload da foto do serviço
     private function uploadFoto($file)
     {
-        $dir = '../public/uploads/servico/';
+        $dir = __DIR__ . '/../../public/uploads/servico/';
 
         if (!file_exists($dir)) {
             mkdir($dir, 0755, true);

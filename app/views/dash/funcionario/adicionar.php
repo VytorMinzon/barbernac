@@ -54,7 +54,7 @@
         <div class="row">
             <!-- Foto do Funcionário -->
             <div class="col-md-4">
-                <img src="<?= BASE_URL ?>uploads/sem-foto.png" alt="Foto do Funcionário" class="img-fluid" id="preview-img" style="width:100%; cursor:pointer;">
+                <img src="<?= BASE_URL ?>uploads/sem-foto.jpg" alt="Foto do Funcionário" class="img-fluid" id="preview-img" style="width:100%; cursor:pointer;">
                 <input type="file" name="foto_funcionario" id="foto_funcionario" style="display:none;" accept="image/*">
             </div>
 
